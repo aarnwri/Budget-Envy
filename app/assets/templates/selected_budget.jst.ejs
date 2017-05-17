@@ -1,0 +1,18 @@
+<!-- TODO: This needs to be changed... don't think we need the control-group class here -->
+<div class="control-group">
+  <label class="control-label">Budget:</label>
+</div>
+
+<select id="budget-list">
+  <% BudgetApp.budgets.each(function(budget) { %>
+    <% if (budget.get("id") === BudgetApp.user.get("active_budget_id")) { %>
+      <option value="<%= budget.get("name") %>" selected="true">
+        <%= budget.get("name") %>
+      </option>
+    <% } else { %>
+      <option value="<%= budget.get("name") %>">
+        <%= budget.get("name") %>
+      </option>
+    <% } %>
+  <% }) %>
+</select>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Budget Envy</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <!-- TODO: ERB file won't run scripts? fix this autofocus thing -->
+  <script type="text/javascript">
+  $("#sign-in").on('click', function() {
+    var x = setTimeout('$("#credentials_username").focus()', 700);
+  });
+  </script>
+</head>
+
+
+<body style>
+  <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="brand" href="#">Budget Envy</a>
+
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li>
+              <% if current_user %>
+                <% if current_user.guest_flag %>
+                  <text id="greeting" class="brand">Welcome Guest!</text>
+                <% else %>
+                  <text id="greeting" class="brand">
+                    <%= "Welcome #{h current_user.username}".html_safe %>
+                  </text>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            
+            <% if current_user %>
+              <% if request.original_url != "/" && current_user.guest_flag %>
+                <li><a href="/">Sign Up</a></li>
+                <li class="divider-vertical"></li>
+              <% end %>
+            <% else %>
+              <li id="sign-in" class="nav dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                  <!-- Login form here -->
+                  <form class="login-form" action="<%= session_url %>" method="POST" accept-charset="UTF-8">
+                    <!-- TODO: fix the autofocus for the username fields -->
+                    <input id="credentials_username" style="margin-bottom: 15px;" type="text" name="credentials[username]" placeholder="Username" autofocus required="required" size="30" />
+                    <input id="credentials_password" style="margin-bottom: 15px;" type="password" name="credentials[password]" placeholder="Password" required size="30" />
+                    <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+                    <label class="string optional" for="user_remember_me"> Remember me</label>
+                    <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+                  </form>  
+                </div>
+              </li>
+            <% end %>
+  
+            <% if current_user %>
+              <li class="divider-vertical"></li>
+              <li class="nav navbar-form">
+            <%= link_to "Log Out", session_url, :method => "delete" %>
+              </li>
+            <% end %>
+            
+          </ul>  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <%= yield %>
+
+</body>
+</html>

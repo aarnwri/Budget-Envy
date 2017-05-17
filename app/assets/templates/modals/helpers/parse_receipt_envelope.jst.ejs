@@ -1,0 +1,28 @@
+<div id="parse-receipt-envelope-<%= num %>" class="parse-receipt-envelope">
+  <div class="control-group">
+    <label for="envelope-<%= num %>-selector" class="control-label">
+      Envelope <%= num %>:
+    </label>
+    <div class="controls">
+      <select id="envelope-<%= num %>-selector" autofocus>
+        <!-- The view will add the options after rendering -->
+      </select>
+    </div>
+  </div>
+  <div id="envelope-<%= num %>-item-list">
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <i id="add-item-envelope-<%= num %>"
+         class="glyphicon icon-button icon-large btn-small btn icon-plus-sign"
+         data-toggle="tooltip"
+         title="Add another item to this envelope"> Add Item</i>
+    </div>
+  </div>
+  <div class="control-group">
+    <label for="envelope-<%= num %>-total" class="control-label">Total: </label>
+    <div class="controls">
+      <input type="text" id="envelope-<%= num %>-total" disabled>
+    </div>
+  </div>
+</div>

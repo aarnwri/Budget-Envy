@@ -1,0 +1,156 @@
+@import "twitter/bootstrap/bootstrap";
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.navbar-fixed-top {
+  margin-bottom: 19px;
+}
+
+.center {
+   margin: 0 auto !important;
+   float: none !important;
+}
+
+body {
+  padding: 50px;
+  background-color: #BCC9D6;
+}
+
+#selected-budget {
+  margin-top: 40px;
+}
+
+.envelope-balance {
+  display: inline-block;
+}
+
+#side-bar-variables {
+  
+}
+
+#side-bar-variables:before {
+  content: '';
+  position: absolute;
+  width: 33%;
+  left: 33%;
+  border-top: solid 1px black;
+}
+
+.hero-unit{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.thumbnail {
+  padding-left: 0px;
+  border-left: 0px;
+  background-color: #B2C3D4;
+}
+
+li.thumbnail {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.glyphicon {
+  font-size: 1.2em;
+}
+
+.icon-plus-sign,
+.icon-plus-sign:hover {
+  color: #369948;
+}
+
+.icon-plus-sign.envelope-add-sub-button,
+.icon-plus-sign.envelope-add-sub-button:hover {
+  color: #FA7923;
+}
+
+.icon-minus-sign,
+.icon-minus-sign:hover {
+  color: #FA2323;
+}
+
+.icon-remove-sign,
+.icon-remove-sign:hover {
+  color: #FA2323;
+}
+
+.btn {
+  background-color: #B2C3D4;
+}
+
+.nounderline {
+  text-decoration: none !important;
+}
+
+ul.envelope-list {
+  margin-left: 0px;
+}
+
+#modal-parse-receipt .modal-body {
+  max-height: 500px;
+}
+
+.parse-receipt-envelope {
+  margin-bottom: 40px;
+}
+
+.parse-receipt-envelope:after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  border-bottom: solid 1px #51565C;
+}
+
+.parse-receipt-total {
+  padding-bottom: 20px;
+}
+
+.parse-receipt-total:after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  border-bottom: solid 1px #51565C;
+}
+
+#parse-receipt-tax-rate {
+  text-align: right;
+}
+
+.control-label {
+  font-weight: bold;
+}
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;

@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="row-fluid text-center">
+        <div class="span6">
+          Budget:
+        </div>
+        <div class="span6">
+          <div class="budget-container_">
+            budget
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row-fluid">
+        <button class="btn btn-medium btn-block btn-primary">Add Envelope</button>
+      </div>
+      <br>
+      <div class="row-fluid">
+        <button class="btn btn-medium btn-block btn-primary">Remove Envelope</button>
+      </div>
+    </div>
+    <div class="span7">
+      <h1><%= @budget.name %></h1>
+
+      <% def print_envelope(envelope) %>
+        <% if envelope.child_envelopes.empty? %>
+          <% return "<li>#{h envelope.name}</li>".html_safe %>
+        <% else %>
+          <% children = "<li>#{h envelope.name}</li><ul>" %>
+            <% envelope.child_envelopes.each do |child| %>
+              <% children += print_envelope(child) %>
+            <% end %>
+          <% children += "</ul>" %>
+
+          <% return children.html_safe %>
+        <% end %>
+      <% end %>
+      
+      <% envelopes = @budget.envelopes_direct_descendants %>
+      <ul>
+        <% envelopes.each do |envelope| %>
+          <%= print_envelope(envelope).html_safe %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

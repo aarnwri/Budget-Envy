@@ -1,0 +1,43 @@
+<!-- Note: removed the "fade" class from the modal to avoid the scroll bug... -->
+
+<div id="modal-create-new-parent-envelope" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Create Envelope</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label">Envelope Name:</label>
+        <div class="controls">
+          <input type="text" placeholder="Envelope Name" class="save-parent-envelope-name input-medium" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Initial Balance:</label>
+        <div class="controls">
+          <input type="text" placeholder="Balance" class="save-parent-envelope-balance input-small" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Expected Deposit:</label>
+        <div class="controls">
+          <input type="text" placeholder="Amount" class="save-parent-envelope-expected-amount input-medium" />
+           / <select class="save-parent-envelope-expected-time input-medium">
+            <option value="one_week">One Week</option>
+            <option value="two_weeks">Two Weeks</option>
+            <option value="one_month" selected="true">One Month</option>
+            <option value="two_months">Two Months</option>
+            <option value="three_months">Three Months</option>
+            <option value="six_months">Six Months</option>
+            <option value="one_year">One Year</option>        
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="submit-parent-envelope" class="btn btn-primary" data-dismiss="modal">Ok</button>
+  </div>
+</div>

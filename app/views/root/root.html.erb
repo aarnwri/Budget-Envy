@@ -1,0 +1,61 @@
+<script>
+$( ".login-button" ).hover(function() {
+  $( ".fade-fields" ).animate({
+    height: "toggle"
+  }, 1000, function() {
+    // Animation complete.
+  });
+});
+</script>
+
+<div class="row text-center hero-unit">
+  <h1>Budget Envy</h1>
+  <h4>An envelope style budget app</h4>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span3 center">
+      <form class="login-form" action="<%= users_url %>" method="POST">
+        <fieldset>
+        <input
+          name="authenticity_token"
+          type="hidden"
+          value="<%= form_authenticity_token %>">
+          <input
+            class="span3"
+            id="user_username"
+            name="user[username]"
+            type="text"
+            placeholder="Username">
+          <input
+            class="span3"
+            id="user_password"
+            name="user[password]"
+            type="password"
+            placeholder="Password">
+        <button class="btn btn-large btn-block btn-primary" type="submit">
+          Sign Up
+        </button>
+      </fieldset>
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  <div class="row">
+    <div class="span3 center">
+      <form class="login-form" action="<%= guest_session_url %>" method="GET">
+        <button class="btn btn-large btn-block btn-primary" type="submit">
+          Login as Guest
+        </button>
+        <input
+          name="authenticity_token"
+          type="hidden"
+          value="form_authenticity_token">
+      </form>
+    </div>
+  </div>
+</div>
+
+

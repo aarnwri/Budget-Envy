@@ -1,0 +1,18 @@
+<div class="row envelope-subs-totals">
+  <span class="span3">
+    <label class="control-label">Sub Envelopes Total:</label>
+  </span>
+  <span class="pull-right">
+    <label class="control-label envelope-balance"><%= envelope.formatSubsTotalBalance()%></label> / 
+    <label class="control-label envelope-balance"><%= envelope.formatSubsTotalExpectedAmount() %></label>
+  </span>
+</div>
+<div class="row">
+  <span class="span3 pull-right">
+    <div class="progress progress-striped">
+      <div class="bar" 
+        style="width: <%= envelope.formatSubsTotalProgressBar() %>; display: block; float: right;">
+      </div>
+    </div>
+  </span>
+</div>

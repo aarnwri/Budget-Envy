@@ -1,0 +1,4 @@
+<h1>Budgets Index</h1>
+<% @budgets.each do |budget| %>
+<%= link_to "#{budget.name}", user_budget_url(budget.user.id, budget.id) %>
+<% end %>

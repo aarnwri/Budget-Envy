@@ -1,0 +1,77 @@
+<!-- Note: removed the "fade" class from the modal to avoid the scroll bug... -->
+
+<div id="modal-parse-receipt" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Parse Receipt</h3>
+  </div>
+  <div class="modal-body">
+    <form class="well">
+      <div>
+        <span id="date" class="control-group form-inline">
+          <label class="control-label">Transaction Date:</label>
+          <input type="text" id="parse-receipt-date-selector" class="input-medium"/>
+        </span>
+        <span class="control-group form-inline pull-right">
+          <label class="control-label" for="parse-receipt-tax-rate">Tax Rate:</label>
+          <input type="text" id="parse-receipt-tax-rate" class="input-mini" value="<%= taxRate %>"/>%
+        </span>
+      </div>
+      <br>
+      <div>
+        <div id="parse-receipt-envelope-list" class="form-horizontal">
+          
+        </div>
+        <div class="form-horizontal">
+          <div class="control-group">
+            <div class="controls">
+              <i id="parse-receipt-add-envelope"
+                 class="glyphicon icon-button icon-large btn-small btn icon-plus-sign"
+                 data-toggle="tooltip"
+                 title="Add another envelope to the list"> Add Envelope</i>
+            </div>
+          </div>
+          <div class="parse-receipt-total">
+            <div class="control-group">
+              <label for="parse-receipt-total" class="control-label">Receipt Total: </label>
+              <div class="controls">
+                <input type="text" id="parse-receipt-total" disabled>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label">Paid To: </label>
+          <div class="controls">
+            <input type="text" placeholder="Institution" id="parse-receipt-paid-to"/>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Note: </label>
+          <div class="controls">
+            <input type="text" placeholder="Add a Note:" id="parse-receipt-note"/>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Payment Type: </label>
+          <div class="controls">
+            <select id="parse-receipt-payment-type">
+              <option value="" selected="true">--</option>
+              <option value="cash">Cash</option>
+              <option value="check">Check</option>
+              <option value="credit_card">Credit Card</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="parse-receipt-submit" class="btn btn-primary" data-dismiss="modal">Ok</button>
+  </div>
+</div>
+

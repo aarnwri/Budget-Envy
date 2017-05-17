@@ -1,0 +1,51 @@
+<!-- Note: removed the "fade" class from the modal to avoid the scroll bug... -->
+
+<div id="modal-make-withdrawal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Make Withdrawal</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-horizontal">
+      <div class="control-group">
+        <label for="make-withdrawal-date-selector" class="control-label">Transaction Date:</label>
+        <div class="controls">
+          <input type="text" id="make-withdrawal-date-selector" class="input-medium"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Amount:</label>
+        <div class="controls">
+          <input type="text" placeholder="Amount To Withdraw" class="withdrawal-amount" autofocus/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Paid To:</label>
+        <div class="controls">
+          <input type="text" placeholder="Institution" class="withdrawal-to"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Note:</label>
+        <div class="controls">
+          <input type="text" placeholder="Add a Note:" class="withdrawal-note"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Payment Type:</label>
+        <div class="controls">
+          <select class="withdrawal-payment-type">
+            <option value="" selected="true">--</option>
+            <option value="cash">Cash</option>
+            <option value="check">Check</option>
+            <option value="credit_card">Credit Card</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="make-withdrawal" class="btn btn-primary" data-dismiss="modal">Ok</button>
+  </div>
+</div>

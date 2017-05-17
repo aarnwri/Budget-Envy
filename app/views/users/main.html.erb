@@ -1,0 +1,6 @@
+<script type="application/json" id="bootstrapped_user_data">
+  <%= (@user.to_json :include => [:budgets, :envelopes]).html_safe %>
+</script>
+<div id = "budget" class="container">
+  
+</div>
